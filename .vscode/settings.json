@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin/Release/net6.0/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/84f6cf0f-1f42-49f8-a14f-6f5d2fc78808/resourceGroups/myResourceGroup/providers/Microsoft.Web/sites/southSound"
+}

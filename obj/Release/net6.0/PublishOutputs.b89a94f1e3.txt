@@ -1,0 +1,7 @@
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/appsettings.Development.json
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/appsettings.json
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.dll
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.deps.json
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.runtimeconfig.json
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.pdb
