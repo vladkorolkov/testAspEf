@@ -15,9 +15,39 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+    //    reportsContext db = new reportsContext();
+        
+    //         string ArtistName = "Босс Терпит Фиаско";
+    //         var q = (from x in db.Examples
+    //                 where x.Исполнитель == ArtistName
+    //                 select x).ToList();
+
+      return View();
+        
+
     }
 
+    [HttpPost]
+    public IActionResult QueryReport(string aartistName)
+    {
+        using (reportsContext db = new reportsContext())
+            {
+                var query = (from q in db.Examples
+                            where q.Исполнитель==aartistName
+                            select q).ToList();            
+
+
+                    
+                return View(@"Views\Home\Report.cshtml", query) ;            
+            }
+
+        
+    }
+
+    public IActionResult QueryReport( )
+    { 
+        return View();
+    }
     public IActionResult Privacy()
     {
         return View();

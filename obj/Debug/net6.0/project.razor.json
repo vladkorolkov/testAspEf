@@ -16298,8 +16298,18 @@
   "RootNamespace": "southSoundWebsite",
   "Documents": [
     {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/Home/Report.cshtml",
+      "TargetPath": "Views\\Home\\Report.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/vlad/southSoundWebsite/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/Home/QueryReport.cshtml",
+      "TargetPath": "Views\\Home\\QueryReport.cshtml",
       "FileKind": "mvc"
     },
     {
