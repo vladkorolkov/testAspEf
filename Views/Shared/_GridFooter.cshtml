@@ -1,0 +1,8 @@
+@model IGrid<Example>
+
+<tr>
+    <td colspan="3"><b>Итого, руб.</b></td>
+    <td><b>@(Model.Rows.Sum(row => row.Model.СуммаДенежныхСредствПолученныхЛицензиатом))</b></td>
+    <td></td>
+    <td></td>
+</tr>

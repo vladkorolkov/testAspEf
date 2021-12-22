@@ -16308,8 +16308,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/Shared/MvcGrid/_Grid.cshtml",
+      "TargetPath": "Views\\Shared\\MvcGrid\\_Grid.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/vlad/southSoundWebsite/Views/Home/QueryReport.cshtml",
       "TargetPath": "Views\\Home\\QueryReport.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/Shared/MvcGrid/_Pager.cshtml",
+      "TargetPath": "Views\\Shared\\MvcGrid\\_Pager.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16323,18 +16333,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/vlad/southSoundWebsite/Views/MvcGrid/_Pager.cshtml",
-      "TargetPath": "Views\\MvcGrid\\_Pager.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/vlad/southSoundWebsite/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/vlad/southSoundWebsite/Views/MvcGrid/_Grid.cshtml",
-      "TargetPath": "Views\\MvcGrid\\_Grid.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16345,6 +16345,11 @@
     {
       "FilePath": "/home/vlad/southSoundWebsite/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/Shared/_GridFooter.cshtml",
+      "TargetPath": "Views\\Shared\\_GridFooter.cshtml",
       "FileKind": "mvc"
     },
     {

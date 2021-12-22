@@ -23,8 +23,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/vlad/southSoundWebsite/Views/Home/QueryReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9RdWVyeVJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vlad/southSoundWebsite/Views/Home/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/vlad/southSoundWebsite/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vlad/southSoundWebsite/Views/Shared/MvcGrid/_Grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL012Y0dyaWQvX0dyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vlad/southSoundWebsite/Views/Shared/MvcGrid/_Pager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL012Y0dyaWQvX1BhZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/vlad/southSoundWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]
