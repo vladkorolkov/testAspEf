@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TXHywlI4V+E4Te7wI8DvLwicdAzCCjRsCY73B6S2Z8E=",
+  "Hash": "w65qwzUQyY3k0C61vEpZxsogMgAP43vrk+sHJ8z6uCg=",
   "Source": "southSoundWebsite",
   "BasePath": "_content/southSoundWebsite",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "/home/vlad/southSoundWebsite/obj/Debug/net6.0/scopedcss/projectbundle/southSoundWebsite.bundle.scp.css"
     },
     {
+      "Identity": "/home/vlad/southSoundWebsite/wwwroot/css/mvc-grid/mvc-grid.css",
+      "SourceId": "southSoundWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/vlad/southSoundWebsite/wwwroot/",
+      "BasePath": "_content/southSoundWebsite",
+      "RelativePath": "css/mvc-grid/mvc-grid.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/mvc-grid/mvc-grid.css"
+    },
+    {
       "Identity": "/home/vlad/southSoundWebsite/wwwroot/css/site.css",
       "SourceId": "southSoundWebsite",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/home/vlad/southSoundWebsite/wwwroot/js/mvc-grid/mvc-grid.js",
+      "SourceId": "southSoundWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/vlad/southSoundWebsite/wwwroot/",
+      "BasePath": "_content/southSoundWebsite",
+      "RelativePath": "js/mvc-grid/mvc-grid.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/mvc-grid/mvc-grid.js"
     },
     {
       "Identity": "/home/vlad/southSoundWebsite/wwwroot/js/site.js",

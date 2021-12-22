@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xjQ7Y78gXnGkEnPaP9tuvgJUSe/wTTsI/327JWVNfNSMqAvEXsiCVh2A1Qcd4A1m0zQ0Xs+dS3zTg8I9BE5yfw==",
+  "dgSpecHash": "RV17EiQXYijdeHvF1Da2xjE9x/lGoNMVC6zNwqki3l9kaaIrE/MY5VYWK1hqPtkMpRMenTxzQKVzMJx+b539xQ==",
   "success": true,
   "projectFilePath": "/home/vlad/southSoundWebsite/southSoundWebsite.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,8 @@
     "/home/vlad/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "/home/vlad/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/home/vlad/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/home/vlad/.nuget/packages/nonfactors.grid.core.mvc6/7.0.0/nonfactors.grid.core.mvc6.7.0.0.nupkg.sha512",
+    "/home/vlad/.nuget/packages/nonfactors.grid.mvc6/7.0.0/nonfactors.grid.mvc6.7.0.0.nupkg.sha512",
     "/home/vlad/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/home/vlad/.nuget/packages/system.configuration.configurationmanager/4.7.0/system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "/home/vlad/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

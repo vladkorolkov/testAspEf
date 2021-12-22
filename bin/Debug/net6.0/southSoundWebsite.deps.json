@@ -9,7 +9,8 @@
       "southSoundWebsite/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "6.0.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1",
+          "NonFactors.Grid.Mvc6": "7.0.0"
         },
         "runtime": {
           "southSoundWebsite.dll": {}
@@ -279,6 +280,19 @@
             "assemblyVersion": "4.0.2.0",
             "fileVersion": "4.700.19.56404"
           }
+        }
+      },
+      "NonFactors.Grid.Core.Mvc6/7.0.0": {
+        "runtime": {
+          "lib/net6.0/Mvc.Grid.Core.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
+          }
+        }
+      },
+      "NonFactors.Grid.Mvc6/7.0.0": {
+        "dependencies": {
+          "NonFactors.Grid.Core.Mvc6": "7.0.0"
         }
       },
       "System.Collections.Immutable/6.0.0": {
@@ -624,6 +638,20 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "NonFactors.Grid.Core.Mvc6/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yBJAt29MPQSGL67cmI8xNWUivJVKYVE4iOCgqd72jfufg+Ak9ut3NWXpBFtSErK5SMo+NhwzWlUgBQ38fDN0Gg==",
+      "path": "nonfactors.grid.core.mvc6/7.0.0",
+      "hashPath": "nonfactors.grid.core.mvc6.7.0.0.nupkg.sha512"
+    },
+    "NonFactors.Grid.Mvc6/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6ymyUKu/7emJVY1SdGHfPRahJTGjN03Uw5IPwF5IEY11KAx6eHwwWc06fzSEbtgPZ7qru1IQOuh1Fjy+mYIPhw==",
+      "path": "nonfactors.grid.mvc6/7.0.0",
+      "hashPath": "nonfactors.grid.mvc6.7.0.0.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",

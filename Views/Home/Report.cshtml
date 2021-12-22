@@ -1,10 +1,28 @@
 
 @model List<Example>
+<h2>
+     Отчет по артисту @ViewData["Artist"]
+</h2>
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add().RenderedAs((model, row) => row + 1).Titled("#").Css("text-center");
+        columns.Add(model => model.НазваниеАльбома).Titled("Альбом");
+        columns.Add(model => model.UpcАльбомаКодТрекаПоБазеЛицензиара).Titled("UPC");
+        columns.Add(model => model.НазваниеТрека).Titled("Трек");
+        columns.Add(model => model.Площадка).Titled("Площадка");
+        columns.Add(model => model.КоличествоЗагрузокПрослушиваний).Titled("Загрузки/прослушивания");
+        columns.Add(model => model.Территория).Titled("Территория");
+        columns.Add(model => model.IsrcКонтента).Titled("ISRC");
+        columns.Add(model => model.СуммаДенежныхСредствПолученныхЛицензиатом).Titled("Вознаграждение");       
+    })
+    .Empty("No data found")
+    .Pageable()
+)
 
 
 
-
-    
 @* <table>
 <tr>
      <td>Площадка</td> <td>Территория</td><td>Тип Контента</td><td>Вид Использования</td><td>Исполнитель</td> <td>UPC</td><td>ISRC</td><td>Трек</td>

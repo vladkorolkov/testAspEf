@@ -394,6 +394,24 @@
           }
         }
       },
+      "NonFactors.Grid.Core.Mvc6/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Mvc.Grid.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Mvc.Grid.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "NonFactors.Grid.Mvc6/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NonFactors.Grid.Core.Mvc6": "[7.0.0]"
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1331,6 +1349,34 @@
         "version.txt"
       ]
     },
+    "NonFactors.Grid.Core.Mvc6/7.0.0": {
+      "sha512": "yBJAt29MPQSGL67cmI8xNWUivJVKYVE4iOCgqd72jfufg+Ak9ut3NWXpBFtSErK5SMo+NhwzWlUgBQ38fDN0Gg==",
+      "type": "package",
+      "path": "nonfactors.grid.core.mvc6/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Mvc.Grid.Core.dll",
+        "nonfactors.grid.core.mvc6.7.0.0.nupkg.sha512",
+        "nonfactors.grid.core.mvc6.nuspec"
+      ]
+    },
+    "NonFactors.Grid.Mvc6/7.0.0": {
+      "sha512": "6ymyUKu/7emJVY1SdGHfPRahJTGjN03Uw5IPwF5IEY11KAx6eHwwWc06fzSEbtgPZ7qru1IQOuh1Fjy+mYIPhw==",
+      "type": "package",
+      "path": "nonfactors.grid.mvc6/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Views/Shared/MvcGrid/_Grid.cshtml",
+        "content/Views/Shared/MvcGrid/_Pager.cshtml",
+        "content/css/mvc-grid/fonts/grid-glyphs.woff",
+        "content/css/mvc-grid/mvc-grid.css",
+        "content/js/mvc-grid/mvc-grid.js",
+        "nonfactors.grid.mvc6.7.0.0.nupkg.sha512",
+        "nonfactors.grid.mvc6.nuspec"
+      ]
+    },
     "System.Collections.Immutable/6.0.0": {
       "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "type": "package",
@@ -1819,7 +1865,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore.Design >= 6.0.1",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.1"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.1",
+      "NonFactors.Grid.Mvc6 >= 7.0.0"
     ]
   },
   "packageFolders": {
@@ -1868,6 +1915,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "NonFactors.Grid.Mvc6": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           }
         },
         "imports": [

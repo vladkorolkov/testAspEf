@@ -13,6 +13,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+    <PackageReference Include="NonFactors.Grid.Mvc6" Version="7.0.0" />
   </ItemGroup>
  
 </Project>

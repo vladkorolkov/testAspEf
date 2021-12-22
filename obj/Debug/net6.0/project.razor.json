@@ -16323,8 +16323,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/MvcGrid/_Pager.cshtml",
+      "TargetPath": "Views\\MvcGrid\\_Pager.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/vlad/southSoundWebsite/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/MvcGrid/_Grid.cshtml",
+      "TargetPath": "Views\\MvcGrid\\_Grid.cshtml",
       "FileKind": "mvc"
     },
     {

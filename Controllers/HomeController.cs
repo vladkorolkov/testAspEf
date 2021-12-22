@@ -30,16 +30,10 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult QueryReport(string aartistName)
     {
-        using (reportsContext db = new reportsContext())
-            {
-                var query = (from q in db.Examples
-                            where q.Исполнитель==aartistName
-                            select q).ToList();            
-
-
-                    
-                return View(@"Views\Home\Report.cshtml", query) ;            
-            }
+        var query = OperationsDB.ReadFromDbAboutArtist(aartistName);     
+        ViewData["Artist"]  = aartistName;
+        return View(@"Views\Home\Report.cshtml", query) ;            
+            
 
         
     }
