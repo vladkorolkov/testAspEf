@@ -34,7 +34,7 @@ public class HomeController : Controller
         ViewData["Artist"]  = aartistName;
         return View(@"Views\Home\Report.cshtml", query) ;            
             
-
+        
         
     }
 
