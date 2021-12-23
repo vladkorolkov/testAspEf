@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace southSoundWebsite
 {
     public partial class Example
-    {
+    {  
         public byte? N { get; set; }
         public string? Площадка { get; set; }
         public string? Территория { get; set; }

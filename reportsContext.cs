@@ -16,7 +16,8 @@ namespace southSoundWebsite
         {
         }
 
-        public virtual DbSet<Example> Examples { get; set; } = null!;
+        public virtual DbSet<Ex2> Ex2s { get; set; } = null!;
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,11 +30,11 @@ namespace southSoundWebsite
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Example>(entity =>
+            modelBuilder.Entity<Ex2>(entity =>
             {
                 entity.HasNoKey();
 
-                entity.ToTable("example");
+                entity.ToTable("ex2");
 
                 entity.Property(e => e.IsrcКонтента)
                     .HasMaxLength(50)
@@ -47,9 +48,13 @@ namespace southSoundWebsite
                     .HasMaxLength(50)
                     .HasColumnName("Вид_использования_контента_Загрузка_стримминг_подписка_радио");
 
-                entity.Property(e => e.ВознаграждениеВРубБезНдс).HasColumnName("Вознаграждение_в_руб_без_НДС");
+                entity.Property(e => e.ВознаграждениеВРубБезНдс)
+                    .HasColumnType("decimal(18, 2)")
+                    .HasColumnName("Вознаграждение_в_руб_без_НДС");
 
-                entity.Property(e => e.ДоляЛицензиара).HasColumnName("Доля_Лицензиара");
+                entity.Property(e => e.ДоляЛицензиара)
+                    .HasMaxLength(50)
+                    .HasColumnName("Доля_Лицензиара");
 
                 entity.Property(e => e.Исполнитель).HasMaxLength(50);
 
@@ -71,7 +76,9 @@ namespace southSoundWebsite
 
                 entity.Property(e => e.Площадка).HasMaxLength(50);
 
-                entity.Property(e => e.СуммаДенежныхСредствПолученныхЛицензиатом).HasColumnName("Сумма_денежных_средств_полученных_Лицензиатом");
+                entity.Property(e => e.СуммаДенежныхСредствПолученныхЛицензиатом)
+                    .HasColumnType("decimal(18, 2)")
+                    .HasColumnName("Сумма_денежных_средств_полученных_Лицензиатом");
 
                 entity.Property(e => e.Территория).HasMaxLength(50);
 
@@ -79,6 +86,7 @@ namespace southSoundWebsite
                     .HasMaxLength(50)
                     .HasColumnName("Тип_контента");
             });
+          
 
             OnModelCreatingPartial(modelBuilder);
         }

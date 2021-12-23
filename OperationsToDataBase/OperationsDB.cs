@@ -7,11 +7,11 @@ public static class OperationsDB
 
     }
 
-    public static List<Example> ReadFromDbAboutArtist(string artistName)
+    public static List<Ex2> ReadFromDbAboutArtist(string artistName)
     {
         using (reportsContext db = new reportsContext())
         {
-            var query = (from q in db.Examples
+            var query = (from q in db.Ex2s
                         where q.Исполнитель == artistName
                         select q).ToList();
             return query;
