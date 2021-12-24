@@ -1,0 +1,27 @@
+@model List<Ex2>
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add().RenderedAs((model, row) => row + 1).Titled("#").Css("text-center");
+        columns.Add(model => model.НазваниеАльбома).Titled("Альбом");        
+        columns.Add(model => model.НазваниеТрека).Titled("Трек");
+        columns.Add(model => model.Площадка).Titled("Площадка").Sortable(true);
+        columns.Add(model => model.КоличествоЗагрузокПрослушиваний).Titled("Загрузки/прослушивания").Sortable(true);
+        columns.Add(model => model.Территория).Titled("Территория").Sortable(true);
+        columns.Add(model => model.IsrcКонтента).Titled("ISRC");
+        columns.Add(model => model.ВознаграждениеВРубБезНдс).Titled("Вознаграждение");       
+    })
+    .Empty("No data found")
+    @* .Pageable(pager => {
+                            pager.PageSizes = new Dictionary<int, string>  { { 0, "All" }, { 50, "2" }, { 200, "4" } };
+                            pager.ShowPageSizes = true;
+                            pager.RowsPerPage = 10;
+                            pager.PagesToDisplay= 3;            
+            
+                        }) *@
+    .UsingFooter("_GridFooter")
+);
+
+
+

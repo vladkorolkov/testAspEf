@@ -6,6 +6,7 @@ namespace southSoundWebsite.Controllers;
 
 public class HomeController : Controller
 {
+    private const string _sessionKey = "";
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -15,28 +16,30 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-    //    reportsContext db = new reportsContext();
-        
-    //         string ArtistName = "Босс Терпит Фиаско";
-    //         var q = (from x in db.Examples
-    //                 where x.Исполнитель == ArtistName
-    //                 select x).ToList();
-
+       
       return View();
-        
 
     }
 
     [HttpPost]
     public IActionResult QueryReport(string aartistName)
     {
-        var query = OperationsDB.ReadFromDbAboutArtist(aartistName);     
-        ViewData["Artist"]  = aartistName;
-        return View(@"Views\Home\Report.cshtml", query) ;            
+        
+        HttpContext.Session.SetString(_sessionKey,aartistName);
             
         
-        
+        return  RedirectToAction("ReportShow");            
+  
     }
+    public IActionResult ReportShow()
+    {
+        ViewData["Artist"]  = _sessionKey;
+        string value = HttpContext.Session.GetString(_sessionKey);
+        var query = OperationsDB.ReadFromDbAboutArtist(value); 
+        return View(query);
+    }
+
+
 
     public IActionResult QueryReport( )
     { 
