@@ -16313,11 +16313,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/vlad/southSoundWebsite/Views/Home/ReadyReport.cshtml",
-      "TargetPath": "Views\\Home\\ReadyReport.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/vlad/southSoundWebsite/Views/Shared/MvcGrid/_Pager.cshtml",
       "TargetPath": "Views\\Shared\\MvcGrid\\_Pager.cshtml",
       "FileKind": "mvc"

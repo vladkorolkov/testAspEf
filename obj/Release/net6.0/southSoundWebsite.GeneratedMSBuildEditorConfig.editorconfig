@@ -27,8 +27,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9RdWVyeVJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/vlad/southSoundWebsite/Views/Home/Report.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXBvcnQuY3NodG1s
+[/home/vlad/southSoundWebsite/Views/Home/ReportShow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXBvcnRTaG93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/vlad/southSoundWebsite/Views/Home/_ReadyGridPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9fUmVhZHlHcmlkUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/vlad/southSoundWebsite/Views/Shared/Error.cshtml]

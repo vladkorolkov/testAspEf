@@ -21,10 +21,7 @@
                             pager.PageSizes = new Dictionary<int, string>  { { 50, "2" }, { 0, "All" }, { 200, "4" } };
                             pager.ShowPageSizes = true;
                             pager.RowsPerPage = 10;
-                            pager.PagesToDisplay= 3;            
-            
-                        }));
-    
-    
-)
+                            pager.PagesToDisplay= 3;                        
+                        }))
 
+@(Html.Grid(Model).UsingFooter("_GridFooter").Css("text-center"))
