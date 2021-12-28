@@ -68,25 +68,21 @@ public class HomeController : Controller
                             line.Территория, 
                             line.IsrcКонтента, 
                             line.ВознаграждениеВРубБезНдс);
+                
             }
-            var stream = new MemoryStream();
-            using (ExcelPackage ep = new ExcelPackage(stream))
-            {
-                var workSheet = ep.Workbook.Worksheets.Add("report");
-                workSheet.Cells.LoadFromDataTable(dt);
+               
+           using( var stream = new MemoryStream())
+           {
+                using (ExcelPackage ep = new ExcelPackage(stream))
+                {
+                var workSheet = ep.Workbook.Worksheets.Add("report_"+artistName+"_"+DateTime.Now);           
+                workSheet.Cells.LoadFromDataTable(dt,true);                
                 ep.SaveAs(stream);
                 return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
-            }
-           
-
+                }                            
+           }
         }
-        
-
-        // string filePath = "/home/vlad/southSoundWebsite/wwwroot/Files/test.txt"; 
-        // string fileType = "Application/txt";
-        // byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
-
-        // return File(fileBytes, fileType, "hello.txt");
+   
       
     }
     public IActionResult QueryReport( )
