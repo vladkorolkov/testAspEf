@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System.Data;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using southSoundWebsite.Models;
 
 namespace southSoundWebsite.Controllers;
@@ -7,11 +9,13 @@ namespace southSoundWebsite.Controllers;
 public class HomeController : Controller
 {
     private const string _sessionKey = "";
+    private readonly IWebHostEnvironment _appEnv;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webenv)
     {
         _logger = logger;
+        _appEnv = webenv;
     }
 
     public IActionResult Index()
@@ -26,21 +30,65 @@ public class HomeController : Controller
     {
         
         HttpContext.Session.SetString(_sessionKey,aartistName);
-            
-        
+                    
         return  RedirectToAction("ReportShow");            
   
     }
     public IActionResult ReportShow()
-    {
-        ViewData["Artist"]  = _sessionKey;
-        string value = HttpContext.Session.GetString(_sessionKey);
-        var query = OperationsDB.ReadFromDbAboutArtist(value); 
-        return View(query);
+    {             
+        string artistName = HttpContext.Session.GetString(_sessionKey);
+        var query = OperationsDB.ReadFromDbAboutArtist(artistName); 
+        ViewData["Artist"]  = artistName;
+        return View(query); 
     }
 
+    [HttpGet]
+    public IActionResult DownloadReportFile()
+    {
+        if (_sessionKey != null)
+        {
+            string artistName = HttpContext.Session.GetString(_sessionKey);
+            var query = OperationsDB.ReadFromDbAboutArtist(artistName);
+            DataTable dt = new DataTable("Grid");
+    
+            dt.Columns.AddRange(new DataColumn[7] { new DataColumn("Альбом"),
+                                        new DataColumn("Трек"),
+                                        new DataColumn("Площадка"),
+                                        new DataColumn("Загрузки/прослушивания"),
+                                        new DataColumn("Территория"),
+                                        new DataColumn("ISRC"),
+                                        new DataColumn("Вознаграждение"), });
+            
+            foreach (var line in query)
+            {
+                dt.Rows.Add(line.НазваниеАльбома, 
+                            line.НазваниеТрека, 
+                            line.Площадка, 
+                            line.КоличествоЗагрузокПрослушиваний, 
+                            line.Территория, 
+                            line.IsrcКонтента, 
+                            line.ВознаграждениеВРубБезНдс);
+            }
+            var stream = new MemoryStream();
+            using (ExcelPackage ep = new ExcelPackage(stream))
+            {
+                var workSheet = ep.Workbook.Worksheets.Add("report");
+                workSheet.Cells.LoadFromDataTable(dt);
+                ep.SaveAs(stream);
+                return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
+            }
+           
 
+        }
+        
 
+        // string filePath = "/home/vlad/southSoundWebsite/wwwroot/Files/test.txt"; 
+        // string fileType = "Application/txt";
+        // byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+
+        // return File(fileBytes, fileType, "hello.txt");
+      
+    }
     public IActionResult QueryReport( )
     { 
         return View();

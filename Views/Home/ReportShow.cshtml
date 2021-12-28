@@ -1,7 +1,16 @@
+
+
+
 @model List<Ex2>
 <h2>
      Отчет по артисту @ViewData["Artist"]
-</h2>
+     <form asp-controller="Home" asp-action="DownloadReportFile" method="get">
+         <button type="submit">Скачать</button>
+     </form>
+     
+
+      
+<br>
 
 @(Html
     .Grid(Model)
