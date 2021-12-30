@@ -16338,6 +16338,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/vlad/southSoundWebsite/Views/Home/Releases.cshtml",
+      "TargetPath": "Views\\Home\\Releases.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/vlad/southSoundWebsite/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -16355,11 +16360,6 @@
     {
       "FilePath": "/home/vlad/southSoundWebsite/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/vlad/southSoundWebsite/Views/Home/_ReadyGridPartial.cshtml",
-      "TargetPath": "Views\\Home\\_ReadyGridPartial.cshtml",
       "FileKind": "mvc"
     }
   ],

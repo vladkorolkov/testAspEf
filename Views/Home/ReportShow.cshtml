@@ -6,13 +6,13 @@
      Отчет по артисту @ViewData["Artist"]
     
 </h2>
+<br><br>
  <form asp-controller="Home" asp-action="DownloadReportFile" method="get">
          <button type="submit">Скачать отчет одним файлом</button>
      </form>     
 
       
-<br>
-
+<br><br>
 @(Html
     .Grid(Model)
     .Build(columns =>

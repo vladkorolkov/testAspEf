@@ -76,7 +76,9 @@ public class HomeController : Controller
                 using (ExcelPackage ep = new ExcelPackage(stream))
                 {
                 var workSheet = ep.Workbook.Worksheets.Add("report_"+artistName+"_"+DateTime.Now);           
-                workSheet.Cells.LoadFromDataTable(dt,true);               
+                workSheet.Cells.LoadFromDataTable(dt,true);   
+                workSheet.Cells["A1:H1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                workSheet.Cells["A1:H1"].Style.Font.Bold = true;
                 ep.SaveAs(stream);
                 return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
                 }                            
@@ -98,5 +100,12 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+
+    public IActionResult Releases()
+    {
+
+        return View();
     }
 }
