@@ -76,7 +76,7 @@ public class HomeController : Controller
                 using (ExcelPackage ep = new ExcelPackage(stream))
                 {
                 var workSheet = ep.Workbook.Worksheets.Add("report_"+artistName+"_"+DateTime.Now);           
-                workSheet.Cells.LoadFromDataTable(dt,true);                
+                workSheet.Cells.LoadFromDataTable(dt,true);               
                 ep.SaveAs(stream);
                 return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
                 }                            

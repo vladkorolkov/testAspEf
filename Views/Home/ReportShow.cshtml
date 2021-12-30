@@ -4,10 +4,11 @@
 @model List<Ex2>
 <h2>
      Отчет по артисту @ViewData["Artist"]
-     <form asp-controller="Home" asp-action="DownloadReportFile" method="get">
-         <button type="submit">Скачать</button>
-     </form>
-     
+    
+</h2>
+ <form asp-controller="Home" asp-action="DownloadReportFile" method="get">
+         <button type="submit">Скачать отчет одним файлом</button>
+     </form>     
 
       
 <br>
