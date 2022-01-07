@@ -12,6 +12,7 @@ public class HomeController : Controller
     private readonly IWebHostEnvironment _appEnv;
     private readonly ILogger<HomeController> _logger;
 
+  
     public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webenv)
     {
         _logger = logger;
@@ -78,25 +79,22 @@ public class HomeController : Controller
                 var workSheet = ep.Workbook.Worksheets.Add("report_"+artistName+"_"+DateTime.Now);           
                 workSheet.Cells.LoadFromDataTable(dt,true);   
                 workSheet.Cells["A1:H1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                workSheet.Cells["A1:H1"].Style.Font.Bold = true;
+                workSheet.Cells["A1:H1"].Style.Font.Bold = true;                
                 ep.SaveAs(stream);
                 return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
                 }                            
            }
         }
-   
       
     }
     public IActionResult QueryReport( )
     { 
         return View();
     }
-    public IActionResult Privacy()
+    public IActionResult Portoflio()
     {
         return View();
     }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

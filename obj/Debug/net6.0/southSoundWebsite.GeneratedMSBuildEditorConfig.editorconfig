@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXBvcnRTaG93LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/vlad/southSoundWebsite/Views/Shared/Components/testvc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvdGVzdHZjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/vlad/southSoundWebsite/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NDgh8DyU6YxpQ8Mbu/DCwTvkApzJ/oRyUkdg8M9dsJg=",
+  "Hash": "FOYSbWdZ33FIAmXXbWHli93Ux0Q5B50jgjAvKCVEYGE=",
   "Source": "southSoundWebsite",
   "BasePath": "_content/southSoundWebsite",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/home/vlad/southSoundWebsite/wwwroot/Files/test.txt",
+      "SourceId": "southSoundWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/vlad/southSoundWebsite/wwwroot/",
+      "BasePath": "_content/southSoundWebsite",
+      "RelativePath": "Files/test.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Files/test.txt"
     },
     {
       "Identity": "/home/vlad/southSoundWebsite/wwwroot/js/mvc-grid/mvc-grid.js",

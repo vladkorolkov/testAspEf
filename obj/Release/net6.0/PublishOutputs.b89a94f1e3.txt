@@ -4,6 +4,7 @@
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.runtimeconfig.json
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/southSoundWebsite.pdb
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/EPPlus.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.Data.SqlClient.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.EntityFrameworkCore.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -15,6 +16,7 @@
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.IdentityModel.Protocols.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.IdentityModel.Tokens.dll
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.IO.RecyclableMemoryStream.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Microsoft.Win32.SystemEvents.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/Mvc.Grid.Core.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/System.Configuration.ConfigurationManager.dll
@@ -24,6 +26,7 @@
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/System.Security.Cryptography.ProtectedData.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/System.Security.Permissions.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/System.Windows.Extensions.dll
+/home/vlad/southSoundWebsite/bin/Release/net6.0/publish/System.Xml.XPath.XmlDocument.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
 /home/vlad/southSoundWebsite/bin/Release/net6.0/publish/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
