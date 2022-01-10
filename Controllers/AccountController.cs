@@ -63,10 +63,33 @@ namespace southSoundWebsite.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
-        private async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Index", "Home");
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            using (UsersContext db = new UsersContext())
+            {
+                if (ModelState.IsValid)
+                    {
+                        User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+                            if (user != null)
+                                {
+                                    await Authenticate(model.Email); // аутентификация
+ 
+                                    return RedirectToAction("Index", "Home");
+                                }
+                            ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                    }
+            return View(model);
+            }
+            
+        }
+        
     }
 }

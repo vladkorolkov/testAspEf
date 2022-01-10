@@ -23,11 +23,38 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Releases">Релизы</a>
                         </li>
-                        <li class="nav-item">
+                         
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="QueryReport">Отчет</a>
-                        </li>
-                     
-                    </ul>
+                            </li>
+                                                       
+                        }
+                       </ul>                           
+                        
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <ul class = "nav justifu-content-end">
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Выйти</a>
+                            </li>
+                            </ul>
+                        }
+                            
+
+                            
+                        @if(!User.Identity.IsAuthenticated)
+                        {
+                                           
+                                <ul class="nav justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Войти</a>
+                                    </li>
+                                </ul>
+                        }
+                    
+                    
                 </div>
             </div>
         </nav>
