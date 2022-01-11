@@ -11,8 +11,9 @@ namespace southSoundWebsite
         protected readonly IConfiguration _conf;
         public reportsContext()
         {
-        }
 
+        }
+       
         public reportsContext(DbContextOptions<reportsContext> options, IConfiguration conf)
             : base(options)
         {
@@ -26,8 +27,9 @@ namespace southSoundWebsite
         {
             if (!optionsBuilder.IsConfigured)
             {
+             
                 optionsBuilder.UseSqlServer("Server=tcp:southsoundserver.database.windows.net,1433;Initial Catalog=reports;Persist Security Info=False;User ID=vladkorolkov;Password=UBynRH4gvCb2q2t;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-              
+                
             }
 
         }
