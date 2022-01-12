@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using southSoundWebsite;
+using southSoundWebsite.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                 options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                 });   
 builder.Services.AddDbContext<reportsContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<UsersContext>(options => options.UseSqlServer(builder.Configuration["users"]));
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 

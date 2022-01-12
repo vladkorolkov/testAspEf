@@ -15,7 +15,7 @@ namespace southSoundWebsite
 
         // }
        
-        public reportsContext(DbContextOptions options)
+        public reportsContext(DbContextOptions<reportsContext> options)
             : base(options)
         {            
         }
