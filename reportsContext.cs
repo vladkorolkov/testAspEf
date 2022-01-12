@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using southSoundWebsite.Models;
@@ -9,30 +10,20 @@ namespace southSoundWebsite
     {
 
         protected readonly IConfiguration _conf;
-        public reportsContext()
-        {
+        // public reportsContext()
+        // {
 
-        }
+        // }
        
-        public reportsContext(DbContextOptions<reportsContext> options, IConfiguration conf)
+        public reportsContext(DbContextOptions options)
             : base(options)
-        {
-            _conf = conf;
+        {            
         }
 
+      
         public virtual DbSet<Ex2> Ex2s { get; set; } = null!;
    
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-             
-                optionsBuilder.UseSqlServer("Server=tcp:southsoundserver.database.windows.net,1433;Initial Catalog=reports;Persist Security Info=False;User ID=vladkorolkov;Password=UBynRH4gvCb2q2t;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-                
-            }
-
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

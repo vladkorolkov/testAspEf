@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using southSoundWebsite.Models;
 
@@ -11,12 +12,13 @@ public class HomeController : Controller
     private const string _sessionKey = "";
     private readonly IWebHostEnvironment _appEnv;
     private readonly ILogger<HomeController> _logger;
-
+    private readonly reportsContext _db;
   
-    public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webenv)
+    public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webenv, reportsContext db)
     {
         _logger = logger;
         _appEnv = webenv;
+        _db = db;
     }
 
     public IActionResult Index()
@@ -37,8 +39,13 @@ public class HomeController : Controller
     }
     public IActionResult ReportShow()
     {             
+        
+        
         string artistName = HttpContext.Session.GetString(_sessionKey);
-        var query = OperationsDB.ReadFromDbAboutArtist(artistName); 
+        var query = (from q in _db.Ex2s
+                    where q.Исполнитель == artistName
+                    select q).ToList();
+        
         ViewData["Artist"]  = artistName;
         return View(query); 
     }
@@ -49,7 +56,10 @@ public class HomeController : Controller
         if (_sessionKey != null)
         {
             string artistName = HttpContext.Session.GetString(_sessionKey);
-            var query = OperationsDB.ReadFromDbAboutArtist(artistName);
+            var query = (from q in _db.Ex2s
+                        where q.Исполнитель == artistName
+                        select q).ToList();
+           
             DataTable dt = new DataTable("Grid");
     
             dt.Columns.AddRange(new DataColumn[7] { new DataColumn("Альбом"),
