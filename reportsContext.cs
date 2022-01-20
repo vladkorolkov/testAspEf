@@ -10,10 +10,7 @@ namespace southSoundWebsite
     {
 
         protected readonly IConfiguration _conf;
-        // public reportsContext()
-        // {
-
-        // }
+       
        
         public reportsContext(DbContextOptions<reportsContext> options)
             : base(options)

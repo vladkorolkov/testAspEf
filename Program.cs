@@ -6,10 +6,9 @@ using southSoundWebsite.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-// Add services to the container.
 builder.Services.AddMvc();
-var connectionString = builder.Configuration["ConnectionString:SouthSoundSql"];
+var connectionStringDb = builder.Configuration["ConnectionString:SouthSoundSql"];
+var connectionStringUsers = builder.Configuration["ConnectionString:Users"];
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();  
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -17,28 +16,22 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                 {
                 options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                 });   
-builder.Services.AddDbContext<reportsContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<UsersContext>(options => options.UseSqlServer(builder.Configuration["users"]));
+builder.Services.AddDbContext<reportsContext>(options => options.UseSqlServer(connectionStringDb));
+builder.Services.AddDbContext<UsersContext>(options => options.UseSqlServer(connectionStringUsers));
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-    
+    app.UseHsts();   
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
