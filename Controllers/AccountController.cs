@@ -50,7 +50,7 @@ namespace southSoundWebsite.Controllers
                     }
                     else 
                         ModelState.AddModelError("", "Некорректный email или пароль");                    
-                               
+                        
             }
             return View(registerModel);
         }
@@ -87,11 +87,13 @@ namespace southSoundWebsite.Controllers
                                     await Authenticate(model.Email); // аутентификация
  
                                     return RedirectToAction("Index", "Home");
-                                }
+                                }                            
                             ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                            
                     }
-            return View(model);
-            
+                    
+                return View("LoginFail", model);
+                    
         
         }
         

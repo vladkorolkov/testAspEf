@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
@@ -13,7 +14,7 @@ public class HomeController : Controller
     private readonly IWebHostEnvironment _appEnv;
     private readonly ILogger<HomeController> _logger;
     private readonly reportsContext _db;
-  
+
     public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webenv, reportsContext db)
     {
         _logger = logger;
@@ -23,31 +24,31 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-       
-      return View();
+
+        return View();
 
     }
 
     [HttpPost]
     public IActionResult QueryReport(string aartistName)
     {
-        
-        HttpContext.Session.SetString(_sessionKey,aartistName);
-                    
-        return  RedirectToAction("ReportShow");            
-  
+
+        HttpContext.Session.SetString(_sessionKey, aartistName);
+
+        return RedirectToAction("ReportShow");
+
     }
     public IActionResult ReportShow()
-    {             
-        
-        
+    {
+
+
         string artistName = HttpContext.Session.GetString(_sessionKey);
         var query = (from q in _db.Ex2s
-                    where q.Исполнитель == artistName
-                    select q).ToList();
-        
-        ViewData["Artist"]  = artistName;
-        return View(query); 
+                     where q.Исполнитель == artistName
+                     select q).ToList();
+
+        ViewData["Artist"] = artistName;
+        return View(query);
     }
 
     [HttpGet]
@@ -57,11 +58,11 @@ public class HomeController : Controller
         {
             string artistName = HttpContext.Session.GetString(_sessionKey);
             var query = (from q in _db.Ex2s
-                        where q.Исполнитель == artistName
-                        select q).ToList();
-           
+                         where q.Исполнитель == artistName
+                         select q).ToList();
+
             DataTable dt = new DataTable("Grid");
-    
+
             dt.Columns.AddRange(new DataColumn[7] { new DataColumn("Альбом"),
                                         new DataColumn("Трек"),
                                         new DataColumn("Площадка"),
@@ -69,36 +70,36 @@ public class HomeController : Controller
                                         new DataColumn("Территория"),
                                         new DataColumn("ISRC"),
                                         new DataColumn("Вознаграждение"), });
-            
+
             foreach (var line in query)
             {
-                dt.Rows.Add(line.НазваниеАльбома, 
-                            line.НазваниеТрека, 
-                            line.Площадка, 
-                            line.КоличествоЗагрузокПрослушиваний, 
-                            line.Территория, 
-                            line.IsrcКонтента, 
+                dt.Rows.Add(line.НазваниеАльбома,
+                            line.НазваниеТрека,
+                            line.Площадка,
+                            line.КоличествоЗагрузокПрослушиваний,
+                            line.Территория,
+                            line.IsrcКонтента,
                             line.ВознаграждениеВРубБезНдс);
-                
+
             }
-               
-           using( var stream = new MemoryStream())
-           {
+
+            using (var stream = new MemoryStream())
+            {
                 using (ExcelPackage ep = new ExcelPackage(stream))
                 {
-                var workSheet = ep.Workbook.Worksheets.Add("report_"+artistName+"_"+DateTime.Now);           
-                workSheet.Cells.LoadFromDataTable(dt,true);   
-                workSheet.Cells["A1:H1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                workSheet.Cells["A1:H1"].Style.Font.Bold = true;                
-                ep.SaveAs(stream);
-                return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
-                }                            
-           }
+                    var workSheet = ep.Workbook.Worksheets.Add("report_" + artistName + "_" + DateTime.Now);
+                    workSheet.Cells.LoadFromDataTable(dt, true);
+                    workSheet.Cells["A1:H1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    workSheet.Cells["A1:H1"].Style.Font.Bold = true;
+                    ep.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report.xlsx");
+                }
+            }
         }
-      
+
     }
-    public IActionResult QueryReport( )
-    { 
+    public IActionResult QueryReport()
+    {
         return View();
     }
     public IActionResult Portoflio()

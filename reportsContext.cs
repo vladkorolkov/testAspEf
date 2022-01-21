@@ -10,16 +10,16 @@ namespace southSoundWebsite
     {
 
         protected readonly IConfiguration _conf;
-       
-       
+
+
         public reportsContext(DbContextOptions<reportsContext> options)
             : base(options)
-        {            
+        {
         }
 
-      
+
         public virtual DbSet<Ex2> Ex2s { get; set; } = null!;
-   
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -80,7 +80,7 @@ namespace southSoundWebsite
                     .HasMaxLength(50)
                     .HasColumnName("Тип_контента");
             });
-          
+
             OnModelCreatingPartial(modelBuilder);
         }
 
